@@ -1,7 +1,7 @@
 const express = require("express");
-const { PostController } = require("./../controllers/post.controller");
-const { Authentication } = require("./../middleware/Authentication");
-const { upload } = require("./../middleware/FileUploader");
+const { PostController } = require("../controllers/post.controller");
+const { Authentication } = require("../middleware/Authentication");
+const { upload } = require("../middleware/FileUploader");
 
 const Postrouter = express.Router();
 
