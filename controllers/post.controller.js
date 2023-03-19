@@ -1,6 +1,6 @@
 const express = require("express");
-const { AuthModel } = require("../models/auth.model");
-const { PostModel } = require("../models/post.model");
+const { AuthModel } = require("./../models/auth.model");
+const { PostModel } = require("./../models/post.model");
 
 const getFeedPosts = async (req, res) => {
   try {
