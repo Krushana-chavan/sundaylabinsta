@@ -2,9 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const io = require('socket.io')(2000)
-io.on('connection', socket =>{
-  console.log(socket.id)
-})
+// io.on('connection', socket =>{
+//   console.log(socket.id)
+// })
 require("dotenv").config();
 // const multer = require("multer");
 const helmet = require("helmet");
