@@ -23,10 +23,25 @@ const AuthSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
-    friends: {
-      type: Array,
-      default: [],
+    followers: [
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref: "post",
     },
+  ],
+    following:
+    [ {
+      type:mongoose.Schema.Types.ObjectId,
+      ref: "post",
+    },
+  ],
+
+    posts:[
+      {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"post",
+      }
+    ],
     location: String,
     occupation: String,
     viewedProfile: Number,
