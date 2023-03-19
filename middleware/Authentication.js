@@ -4,7 +4,7 @@ const Authentication = async (req, res, next) => {
   const token = req.headers?.authorization?.split(" ")[1];
   console.log(token);
   if (!token) {
-    res.send({ msg: "please login" });
+    res.status(400).send({ msg: "please login" });
   }
   const decoded = jwt.verify(token, process.env.SECRET_KEY);
   const { user_id, email } = decoded;

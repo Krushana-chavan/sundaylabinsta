@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { AuthModel } = require("../models/auth.model");
-
+const io = require('socket.io')(3000)
 const SignUp = async (req, res) => {
   const {
     username,
@@ -56,6 +56,7 @@ const Login = async (req, res) => {
   if (user) {
     const hashed_pass = user.password;
     const user_id = user._id;
+    const username = user.username
     bcrypt.compare(password, hashed_pass, function (err, result) {
       if (err) {
         res
@@ -64,7 +65,7 @@ const Login = async (req, res) => {
       }
       if (result) {
         const token = jwt.sign(
-          { user_id: user_id, email: email },
+          { user_id: user_id, email: email,username:username },
           process.env.SECRET_KEY
         );
         delete user.password;
