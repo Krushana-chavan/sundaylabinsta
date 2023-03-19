@@ -36,7 +36,7 @@ app.use("/post", Postrouter);
 app.listen(PORT, async () => {
   try {
     await connection;
-    console.log("Connected Succesfull to db");
+    console.log("Connected  Succesfull to db");
   } catch (err) {
     console.log("error from db");
     console.log(err);
